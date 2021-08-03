@@ -6,10 +6,13 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:fitness_theme/main/store/AppStore.dart';
 import 'package:fitness_theme/main/utils/AppTheme.dart';
-import 'package:fitness_theme/theme6/screens/T6Dashboard.dart';
-import 'package:fitness_theme/theme6/screens/T6SignIn.dart';
+import 'package:fitness_theme/interface/screens/T6Dashboard.dart';
+import 'package:fitness_theme/interface/screens/T6SignIn.dart';
+import 'package:provider/provider.dart'; // new
 
 import 'main/utils/AppConstant.dart';
+import 'package:fitness_theme/main/utils/authentication/applicationstate.dart'; // new
+
 //endregion
 
 /// This variable is used to get dynamic colors when theme mode is changed
@@ -30,8 +33,12 @@ void main() async {
     MobileAds.instance.initialize();
   }
 
-  runApp(MyApp());
-  //endregion
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ApplicationState(),
+      builder: (context, _) => MyApp(),
+    ),
+  ); //endregion
 }
 
 class MyApp extends StatelessWidget {

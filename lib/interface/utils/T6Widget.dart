@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:fitness_theme/main/utils/AppWidget.dart';
 import 'package:fitness_theme/main/utils/percent_indicator/circular_percent_indicator.dart';
-import 'package:fitness_theme/theme6/utils/T6Colors.dart';
+import 'package:fitness_theme/interface/utils/T6Colors.dart';
 
 import '../../main.dart';
 import 'T6Constant.dart';

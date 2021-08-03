@@ -3,22 +3,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fitness_theme/main/utils/AppWidget.dart';
-import 'package:fitness_theme/theme6/utils/T6Colors.dart';
-import 'package:fitness_theme/theme6/utils/T6Constant.dart';
-import 'package:fitness_theme/theme6/utils/T6Images.dart';
-import 'package:fitness_theme/theme6/utils/T6Strings.dart';
-import 'package:fitness_theme/theme6/utils/T6Widget.dart';
+import 'package:fitness_theme/interface/utils/T6Colors.dart';
+import 'package:fitness_theme/interface/utils/T6Constant.dart';
+import 'package:fitness_theme/interface/utils/T6Images.dart';
+import 'package:fitness_theme/interface/utils/T6Strings.dart';
+import 'package:fitness_theme/interface/utils/T6Widget.dart';
 
 import '../../main.dart';
 
-class T6SignIn extends StatefulWidget {
-  static String tag = '/T6SignIn';
+class T6SignUp extends StatefulWidget {
+  static String tag = '/T6SignUp';
 
   @override
-  T6SignInState createState() => T6SignInState();
+  T6SignUpState createState() => T6SignUpState();
 }
 
-class T6SignInState extends State<T6SignIn> {
+class T6SignUpState extends State<T6SignUp> {
   @override
   Widget build(BuildContext context) {
     changeStatusColor(appStore.appBarColor!);
@@ -30,6 +30,7 @@ class T6SignInState extends State<T6SignIn> {
         child: SingleChildScrollView(
           child: Container(
             height: height,
+            alignment: Alignment.center,
             margin: EdgeInsets.only(left: 20, right: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -43,9 +44,7 @@ class T6SignInState extends State<T6SignIn> {
                       imageUrl: t6_ic_logo,
                       width: width / 2.2),
                 ),
-                SizedBox(
-                  height: 30,
-                ),
+                SizedBox(height: 30),
                 text(t6_lbl_user_name, textColor: appStore.textSecondaryColor),
                 SizedBox(height: 8),
                 T6EditTextStyle(t6_username),
@@ -54,29 +53,24 @@ class T6SignInState extends State<T6SignIn> {
                     textColor: appStore.textSecondaryColor),
                 SizedBox(height: 8),
                 T6EditTextStyle(t6_mobileno),
-                SizedBox(height: 10),
-                Container(
-                    alignment: Alignment.topRight,
-                    child: text(t6_lbl_forgot_password)),
-                SizedBox(
-                  height: 16,
-                ),
+                SizedBox(height: 16),
+                text(t6_lbl_referral_code,
+                    textColor: appStore.textSecondaryColor),
+                SizedBox(height: 8),
+                T6EditTextStyle(t6_referral_code),
+                SizedBox(height: 20),
                 T6Button(
-                  textContent: t6_lbl_sign_in,
+                  textContent: t6_lbl_sign_up,
                   onPressed: () {},
                 ),
-                SizedBox(
-                  height: 10,
-                ),
+                SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    text(t6_lbl_new_to_this_experience),
-                    SizedBox(
-                      width: 4,
-                    ),
+                    text(t6_lbl_already_did_this),
+                    SizedBox(width: 4),
                     GestureDetector(
-                        child: Text(t6_lbl_sign_up,
+                        child: Text(t6_lbl_sign_in,
                             style: TextStyle(
                                 fontSize: textSizeMedium,
                                 decoration: TextDecoration.underline,
@@ -84,16 +78,12 @@ class T6SignInState extends State<T6SignIn> {
                         onTap: () {})
                   ],
                 ),
-                SizedBox(
-                  height: 10,
-                ),
+                SizedBox(height: 10),
                 Container(
                     alignment: Alignment.center,
                     child: text(t6_lbl_or_with,
-                        textAllCaps: true, textColor: t6colorPrimary)),
-                SizedBox(
-                  height: 10,
-                ),
+                        textColor: t6colorPrimary, textAllCaps: true)),
+                SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -103,24 +93,17 @@ class T6SignInState extends State<T6SignIn> {
                       width: width / 7.5,
                       height: width / 7.5,
                       padding: EdgeInsets.all(width / 28),
-                      child: SvgPicture.asset(
-                        t6_google_fill,
-                        color: t6white,
-                      ),
+                      child: SvgPicture.asset(t6_google_fill,
+                          color: t6white, width: 20, height: 20),
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
+                    SizedBox(width: 20),
                     Container(
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: t6form_facebook),
                       width: width / 7.5,
                       height: width / 7.5,
                       padding: EdgeInsets.all(width / 28),
-                      child: SvgPicture.asset(
-                        t6_facebook_fill,
-                        color: t6white,
-                      ),
+                      child: SvgPicture.asset(t6_facebook_fill, color: t6white),
                     ),
                   ],
                 )

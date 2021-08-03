@@ -1,5 +1,5 @@
-import 'package:fitness_theme/theme6/models/T6Models.dart';
-import 'package:fitness_theme/theme6/utils/T6Images.dart';
+import 'package:fitness_theme/interface/models/T6Models.dart';
+import 'package:fitness_theme/interface/utils/T6Images.dart';
 
 List<T6LogModel> getList() {
   List<T6LogModel> list = [];

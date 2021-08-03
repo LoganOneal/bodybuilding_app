@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_theme/main/utils/AppWidget.dart';
 import 'package:fitness_theme/main/utils/dots_indicator/dots_indicator.dart';
-import 'package:fitness_theme/theme6/utils/T6Colors.dart';
-import 'package:fitness_theme/theme6/utils/T6Constant.dart';
-import 'package:fitness_theme/theme6/utils/T6Images.dart';
-import 'package:fitness_theme/theme6/utils/T6Strings.dart';
-import 'package:fitness_theme/theme6/utils/T6Widget.dart';
+import 'package:fitness_theme/interface/utils/T6Colors.dart';
+import 'package:fitness_theme/interface/utils/T6Constant.dart';
+import 'package:fitness_theme/interface/utils/T6Images.dart';
+import 'package:fitness_theme/interface/utils/T6Strings.dart';
+import 'package:fitness_theme/interface/utils/T6Widget.dart';
 
 class T6WalkThrough extends StatefulWidget {
   static String tag = '/T6WalkThrough';

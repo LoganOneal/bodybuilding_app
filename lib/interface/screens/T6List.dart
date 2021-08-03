@@ -2,12 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_theme/main/utils/AppWidget.dart';
-import 'package:fitness_theme/theme6/models/T6Models.dart';
-import 'package:fitness_theme/theme6/utils/T6Colors.dart';
-import 'package:fitness_theme/theme6/utils/T6Constant.dart';
-import 'package:fitness_theme/theme6/utils/T6DataGenerator.dart';
-import 'package:fitness_theme/theme6/utils/T6Strings.dart';
-import 'package:fitness_theme/theme6/utils/T6Widget.dart';
+import 'package:fitness_theme/interface/models/T6Models.dart';
+import 'package:fitness_theme/interface/utils/T6Colors.dart';
+import 'package:fitness_theme/interface/utils/T6Constant.dart';
+import 'package:fitness_theme/interface/utils/T6DataGenerator.dart';
+import 'package:fitness_theme/interface/utils/T6Strings.dart';
+import 'package:fitness_theme/interface/utils/T6Widget.dart';
 
 import '../../main.dart';
 

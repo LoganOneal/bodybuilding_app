@@ -1,0 +1,23 @@
+import 'package:fitness_theme/main/utils/AppConstant.dart';
+
+const t6_ic_activity = "images/interface/t6_ic_activity.svg";
+const t6_ic_boxing = "images/interface/t6_ic_boxing.svg";
+const t6_ic_cycle = "images/interface/t6_ic_cycle.svg";
+const t6_ic_list = "images/interface/t6_ic_list.svg";
+const t6_ic_logo = "$BaseUrl/images/interface/t6_ic_logo.png";
+const t6_ic_profile = "$BaseUrl/images/interface/t6_ic_profile.jpg";
+const t6_ic_running = "images/interface/t6_ic_running.svg";
+const t6_ic_sleep = "images/interface/t6_ic_sleep.svg";
+const t6_ic_swim = "images/interface/t6_ic_swim.svg";
+const t6_ic_walk = "images/interface/t6_ic_walk.svg";
+const t6_ic_walk1 = "$BaseUrl/images/interface/t6_ic_walk1.png";
+const t6_ic_walk2 = "$BaseUrl/images/interface/t6_ic_walk2.png";
+const t6_ic_work1 = "$BaseUrl/images/interface/t6_ic_work1.jpg";
+const t6_ic_work4 = "$BaseUrl/images/interface/t6_ic_work4.png";
+const t6_ic_work2 = "$BaseUrl/images/interface/t6_ic_work2.jpeg";
+const t6_ic_zumba = "images/interface/t6_ic_zumba.svg";
+const t6_ic_meal = "images/interface/t6_ic_meal.svg";
+const t6_ic_work3 = "$BaseUrl/images/interface/t6_ic_work3.jpg";
+const t6_facebook_fill = "images/interface/t6_facebook_fill.svg";
+const t6_google_fill = "images/interface/t6_google_fill.svg";
+const t6_ic_work_bn = "images/interface/t6_ic_work_bn.svg";
