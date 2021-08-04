@@ -26,7 +26,7 @@ void main() async {
 
   await initialize();
 
-  appStore.toggleDarkMode(value: true);
+  appStore.toggleDarkMode(value: false);
 
   if (isMobile) {
     await Firebase.initializeApp();

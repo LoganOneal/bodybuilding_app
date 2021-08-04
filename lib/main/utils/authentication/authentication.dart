@@ -1,3 +1,5 @@
+import 'package:fitness_theme/interface/screens/T6Dashboard.dart';
+import 'package:fitness_theme/interface/utils/T6Widget.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets.dart';
@@ -47,17 +49,16 @@ class Authentication extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (loginState) {
       case ApplicationLoginState.loggedOut:
-        return Row(
+        return Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 24, bottom: 8),
-              child: StyledButton(
+            Center(
+              child: T6Button(
+                textContent: 'Login',
                 onPressed: () {
                   startLoginFlow();
                 },
-                child: const Text('Login'),
               ),
-            ),
+            )
           ],
         );
       case ApplicationLoginState.emailAddress:
@@ -96,11 +97,11 @@ class Authentication extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 24, bottom: 8),
-              child: StyledButton(
+              child: T6Button(
+                textContent: 'LOGOUT',
                 onPressed: () {
                   signOut();
                 },
-                child: const Text('LOGOUT'),
               ),
             ),
           ],
@@ -134,14 +135,11 @@ class Authentication extends StatelessWidget {
             ),
           ),
           actions: <Widget>[
-            StyledButton(
+            T6Button(
+              textContent: 'OK',
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text(
-                'OK',
-                style: TextStyle(color: Colors.deepPurple),
-              ),
             ),
           ],
         );
@@ -194,13 +192,13 @@ class _EmailFormState extends State<EmailForm> {
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 16.0, horizontal: 30),
-                      child: StyledButton(
+                      child: T6Button(
+                        textContent: 'NEXT',
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             widget.callback(_controller.text);
                           }
                         },
-                        child: const Text('NEXT'),
                       ),
                     ),
                   ],
@@ -308,8 +306,9 @@ class _RegisterFormState extends State<RegisterForm> {
                         child: const Text('CANCEL'),
                       ),
                       const SizedBox(width: 16),
-                      StyledButton(
-                        onPressed: () {
+                      T6Button(
+                        textContent: 'SAVE',
+                        onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             widget.registerAccount(
                               _emailController.text,
@@ -318,7 +317,6 @@ class _RegisterFormState extends State<RegisterForm> {
                             );
                           }
                         },
-                        child: const Text('SAVE'),
                       ),
                       const SizedBox(width: 30),
                     ],
@@ -404,7 +402,8 @@ class _PasswordFormState extends State<PasswordForm> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       const SizedBox(width: 16),
-                      StyledButton(
+                      T6Button(
+                        textContent: 'SIGN IN',
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             widget.login(
@@ -412,8 +411,12 @@ class _PasswordFormState extends State<PasswordForm> {
                               _passwordController.text,
                             );
                           }
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => T6Dashboard()),
+                          );
                         },
-                        child: const Text('SIGN IN'),
                       ),
                       const SizedBox(width: 30),
                     ],

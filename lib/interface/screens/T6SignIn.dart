@@ -1,4 +1,8 @@
+// ignore_for_file: file_names
+
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:fitness_theme/main/utils/authentication/applicationstate.dart';
+import 'package:fitness_theme/main/utils/authentication/authentication.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,6 +12,7 @@ import 'package:fitness_theme/interface/utils/T6Constant.dart';
 import 'package:fitness_theme/interface/utils/T6Images.dart';
 import 'package:fitness_theme/interface/utils/T6Strings.dart';
 import 'package:fitness_theme/interface/utils/T6Widget.dart';
+import 'package:provider/provider.dart';
 
 import '../../main.dart';
 
@@ -46,43 +51,21 @@ class T6SignInState extends State<T6SignIn> {
                 SizedBox(
                   height: 30,
                 ),
-                text(t6_lbl_user_name, textColor: appStore.textSecondaryColor),
-                SizedBox(height: 8),
-                T6EditTextStyle(t6_username),
-                SizedBox(height: 16),
-                text(t6_lbl_mobile_number,
-                    textColor: appStore.textSecondaryColor),
-                SizedBox(height: 8),
-                T6EditTextStyle(t6_mobileno),
-                SizedBox(height: 10),
-                Container(
-                    alignment: Alignment.topRight,
-                    child: text(t6_lbl_forgot_password)),
+                Consumer<ApplicationState>(
+                  builder: (context, appState, _) => Authentication(
+                    email: appState.email,
+                    loginState: appState.loginState,
+                    startLoginFlow: appState.startLoginFlow,
+                    verifyEmail: appState.verifyEmail,
+                    signInWithEmailAndPassword:
+                        appState.signInWithEmailAndPassword,
+                    cancelRegistration: appState.cancelRegistration,
+                    registerAccount: appState.registerAccount,
+                    signOut: appState.signOut,
+                  ),
+                ),
                 SizedBox(
                   height: 16,
-                ),
-                T6Button(
-                  textContent: t6_lbl_sign_in,
-                  onPressed: () {},
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    text(t6_lbl_new_to_this_experience),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    GestureDetector(
-                        child: Text(t6_lbl_sign_up,
-                            style: TextStyle(
-                                fontSize: textSizeMedium,
-                                decoration: TextDecoration.underline,
-                                color: t6form_google)),
-                        onTap: () {})
-                  ],
                 ),
                 SizedBox(
                   height: 10,
